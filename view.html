@@ -1,0 +1,11 @@
+<div class="oj-panel">
+  <div id="formHolder">
+    <h4 data-bind="text: title"></h4>
+    <div data-bind="foreach: inputvalues">
+      <span data-bind="text: label"></span><br>
+      <input data-bind="attr: {id: id, type: type}" class=""/>
+<br>
+    </div><br>
+    <button data-bind="click: handleClick">Submit</button>
+  </div>
+</div>

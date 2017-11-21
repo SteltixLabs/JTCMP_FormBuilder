@@ -1,0 +1,27 @@
+{
+  "name": "form-builder",
+  "displayName": "form-builder",
+  "description": "Takes an array of keys/labels and creates html form",
+  "version": "1.0.0",
+  "jetVersion": "^4.0.0",
+  "properties": {
+    "inputvalues": {
+      "type": "array"
+    }, 
+    "callback":{
+      "type": "function"
+    }, 
+    "title":{
+      "type":"string"
+    }
+  },
+  "methods": {
+
+  }, 
+  "events": {
+
+  }, 
+  "slots": {
+
+  }
+}
