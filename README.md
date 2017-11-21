@@ -1,5 +1,7 @@
-# ojet component template
+# Form Builder
 
 ## Usage
-Refer to the oj.Composite jsdoc
-http://www.oracle.com/webfolder/technetwork/jet/jsdocs/oj.Composite.html
+```
+<form-builder callback="{{myHandler}}" title="Login" inputvalues='[
+          {"label":"Username", "id": "user", "type":"text"},...
+          ]'></form-builder>
