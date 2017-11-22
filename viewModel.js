@@ -8,12 +8,16 @@ define(
         self.inputvalues = ko.observable([]);
         self.title = ko.observable();
         self.callback = "";
+        self.uniqueID = ko.observable(Math.random().toFixed(2)*100);
 
         self.handleClick = function(evt, ui){
             //alert(evt)
             var formData = [];
-            $(":input").each((inPut)=>{
-                formData.push({key:inPut.id, value: inPut.value})
+            $("#"+self.uniqueID().toString()).find(":input").each((i, inPut)=>{
+                console.log(i, inPut)
+                if(inPut.value != ''){
+                    formData.push({key:inPut.id, value: inPut.value})
+                }
             })
             if(typeof self.callback == "function"){
                 self.callback(formData)

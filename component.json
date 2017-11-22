@@ -5,15 +5,19 @@
   "version": "1.0.0",
   "jetVersion": "^4.0.0",
   "properties": {
+
     "inputvalues": {
       "type": "array"
     }, 
+
     "callback":{
       "type": "function"
     }, 
+
     "title":{
       "type":"string"
     }
+    
   },
   "methods": {
 
