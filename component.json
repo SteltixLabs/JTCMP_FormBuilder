@@ -9,6 +9,9 @@
     "inputvalues": {
       "type": "array"
     }, 
+    "image": {
+      "type": "string"
+    }, 
 
     "callback":{
       "type": "function"

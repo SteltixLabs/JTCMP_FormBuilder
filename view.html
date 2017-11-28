@@ -1,5 +1,6 @@
 <div class="oj-panel">
   <div class="formHolder" data-bind="attr: {id: uniqueID}">
+    <img data-bind="attr: {src: $props.image}" />
     <h4 data-bind="text: title"></h4>
     <div data-bind="foreach: inputvalues">
       <span data-bind="text: label"></span><br>
