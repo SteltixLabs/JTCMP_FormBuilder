@@ -1,8 +1,8 @@
 define(
-    ['ojs/ojcore', 'knockout', 'jquery'], function (oj, ko, $) {
+    ['ojs/ojcore', 'knockout', 'jquery','ojs/ojinputtext', 'ojs/ojlabel','ojs/ojbutton'], function (oj, ko, $) {
     'use strict';
     
-    function ExampleComponentModel(context) {
+    function formBuilderComponentModel(context) {
         var self = this;
         self.composite = context.element;
         self.inputvalues = ko.observable([]);
@@ -12,11 +12,11 @@ define(
 
         self.handleClick = function(evt, ui){
             //alert(evt)
-            var formData = [];
-            $("#"+self.uniqueID().toString()).find(":input").each((i, inPut)=>{
-                console.log(i, inPut)
+            var formData = {};
+            $("#"+self.uniqueID().toString()).find(".myInputs").each((i, inPut)=>{
+                console.log("found one == "+ inPut)
                 if(inPut.value != ''){
-                    formData.push({key:inPut.id, value: inPut.value})
+                    formData[inPut.id] =  inPut.value;
                 }
             })
             if(typeof self.callback == "function"){
@@ -45,7 +45,7 @@ define(
     //ExampleComponentModel.prototype.activated = function(context){
     //};
 
-    ExampleComponentModel.prototype.attached = function(context){
+    formBuilderComponentModel.prototype.attached = function(context){
     
     };
 
@@ -55,5 +55,5 @@ define(
     //ExampleComponentModel.prototype.detached = function(context){
     //};
 
-    return ExampleComponentModel;
+    return formBuilderComponentModel;
 });

@@ -3,10 +3,18 @@
     <img data-bind="attr: {src: $props.image}" />
     <h4 data-bind="text: title"></h4>
     <div data-bind="foreach: inputvalues">
-      <span data-bind="text: label"></span><br>
-      <input data-bind="attr: {id: id, type: type}" class=""/>
+      <span data-bind="text:label"></span><br>
+    <!-- ko if: $data['type'] == 'text' -->
+    <oj-input-text data-bind="attr: {id: id}" class="myInputs"></oj-input-text>
+    
+    <!-- /ko -->
+
+        <!-- ko if: $data['type'] == 'password' -->
+        <oj-input-password data-bind="attr: {id: id}" class="myInputs"></oj-input-password>
+        
+        <!-- /ko -->
 <br>
     </div><br>
-    <button data-bind="click: handleClick">Submit</button>
+    <oj-button data-bind="click: handleClick">Submit</oj-button>
   </div>
 </div>
