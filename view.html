@@ -1,20 +1,27 @@
-<div class="oj-panel">
+<div class="oj-panel oj-flex-items-pad main-wrapper">
   <div class="formHolder" data-bind="attr: {id: uniqueID}">
-    <img data-bind="attr: {src: $props.image}" />
-    <h4 data-bind="text: title"></h4>
-    <div data-bind="foreach: inputvalues">
-      <span data-bind="text:label"></span><br>
-    <!-- ko if: $data['type'] == 'text' -->
-    <oj-input-text data-bind="attr: {id: id}" class="myInputs"></oj-input-text>
-    
-    <!-- /ko -->
-
-        <!-- ko if: $data['type'] == 'password' -->
-        <oj-input-password data-bind="attr: {id: id}" class="myInputs"></oj-input-password>
-        
-        <!-- /ko -->
-<br>
-    </div><br>
-    <oj-button data-bind="click: handleClick">Submit</oj-button>
+      <div class="oj-flex">
+          <div class="oj-flex-item oj-md-flex-direction-column side-column">
+                <!-- <img data-bind="attr: {src: $props.image}" /> -->
+          </div>
+          <div class="oj-md-flex-direction-column oj-flex-item input-box">
+              <div style="text-align:center">
+                <img class="login-logo" src="http://zonestaging.steltixlabs.com./images/SteltixLABS_Labs-White.png" />
+              </div>
+                <!-- <h4 class="main-title" data-bind="text: title"></h4> -->
+                    <div class="inputValues" data-bind="foreach: inputvalues">
+                      <span class="inputTextLabels" data-bind="text:label"></span>
+                    <!-- ko if: $data['type'] == 'text' -->
+                        <oj-input-text placeholder="" data-bind="attr: {id: id}" class="myInputs"></oj-input-text>
+                    <!-- /ko -->
+                    <!-- ko if: $data['type'] == 'password' -->
+                        <oj-input-password data-bind="attr: {id: id}" class="myInputs"></oj-input-password>
+                    <!-- /ko -->
+                    </div>
+                <oj-button chroming='full' class='steltix-button submit-btn' data-bind="click: handleClick">SUBMIT</oj-button>
+              
+            </div>
+        <div class="oj-flex-item oj-md-flex-direction-column side-column"></div>
+      </div>
   </div>
 </div>

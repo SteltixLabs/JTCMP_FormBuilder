@@ -10,7 +10,9 @@ define(
         self.callback = "";
         self.uniqueID = ko.observable(Math.random().toFixed(2)*100);
 
-        self.handleClick = function(evt, ui){
+        self.handleClick = function (evt, ui) {
+            
+            // $(".oj-web-applayout-content").removeClass("blue-grad");
             //alert(evt)
             var formData = {};
             $("#"+self.uniqueID().toString()).find(".myInputs").each((i, inPut)=>{
@@ -23,6 +25,7 @@ define(
                 self.callback(formData)
             }
         }
+
         context.props.then(function (propertyMap) {
             //Store a reference to the properties for any later use
             self.properties = propertyMap;
