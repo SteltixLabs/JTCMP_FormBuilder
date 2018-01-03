@@ -12,8 +12,6 @@ define(
 
         self.handleClick = function (evt, ui) {
             
-            // $(".oj-web-applayout-content").removeClass("blue-grad");
-            //alert(evt)
             var formData = {};
             $("#"+self.uniqueID().toString()).find(".myInputs").each((i, inPut)=>{
                 console.log("found one == "+ inPut)
@@ -24,6 +22,10 @@ define(
             if(typeof self.callback == "function"){
                 self.callback(formData)
             }
+
+            $("body").removeClass("blue-grad");
+            $("body").addClass("white-body");
+            $("button").hide();
         }
 
         context.props.then(function (propertyMap) {
