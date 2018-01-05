@@ -25,7 +25,7 @@ define(
 
             $("body").removeClass("blue-grad");
             $("body").addClass("white-body");
-            $("button").hide();
+            $(".steltix-button").hide();
         }
 
         context.props.then(function (propertyMap) {
@@ -44,6 +44,8 @@ define(
             }
 
         });
+
+        self.steltixLogoWhite = ko.observable("http://zonestaging.steltixlabs.com./images/SteltixLABS_Labs-White.png");
     };
     
     //Lifecycle methods - uncomment and implement if necessary 
