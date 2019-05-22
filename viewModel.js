@@ -10,8 +10,8 @@ define(
         self.callback = "";
         self.uniqueID = ko.observable(Math.random().toFixed(2)*100);
 
-        self.handleClick = function(evt, ui){
-            //alert(evt)
+        self.handleClick = function (evt, ui) {
+            
             var formData = {};
             $("#"+self.uniqueID().toString()).find(".myInputs").each((i, inPut)=>{
                 console.log("found one == "+ inPut)
@@ -22,7 +22,12 @@ define(
             if(typeof self.callback == "function"){
                 self.callback(formData)
             }
+
+            $("body").removeClass("blue-grad");
+            $("body").addClass("white-body");
+            $(".steltix-button").hide();
         }
+
         context.props.then(function (propertyMap) {
             //Store a reference to the properties for any later use
             self.properties = propertyMap;
@@ -39,6 +44,8 @@ define(
             }
 
         });
+
+        self.steltixLogoWhite = ko.observable("http://zonestaging.steltixlabs.com./images/SteltixLABS_Labs-White.png");
     };
     
     //Lifecycle methods - uncomment and implement if necessary 
